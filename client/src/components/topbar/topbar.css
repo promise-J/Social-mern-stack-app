@@ -1,0 +1,112 @@
+.topbar{
+    height: 70px;
+    position: sticky;
+    top: 0;
+    z-index: 99;
+}
+
+.topbarWrapper{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    background-color: rgb(62, 62, 223);
+    background-color: var(--background);
+}
+
+.topbar-left{
+    flex: 3;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 38px;
+    font-weight: 600;
+    color: white;
+}
+.topbar-center{
+    flex: 5;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.topbarSearch{
+    width: 95%;
+    height: 70%;
+    display: flex;
+    align-items: center;
+    border-radius: 26px;
+    background-color: white;
+}
+.topbarSearchIcon{
+    margin-left: 20px;
+    font-size: 26px !important;
+}
+.topbarSearchInput{
+    width: 90%;
+    height: 90%;
+    outline: none;
+    outline-width: 0;
+    border: none;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 10px 15px;
+}
+.topbarSearchInput:focus{
+    outline: none;
+}
+.topbar-right{
+    flex: 3;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.topbarRightLinks{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+    height: 100%;
+}
+.topbarRightLink{
+    cursor: pointer;
+}
+.topbarRightIcons{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: space-around;
+}
+
+.topbarRightIcon{
+    position: relative;
+    cursor: pointer;
+    color: white !important;
+} 
+
+.topbarRightLabel{
+    position: absolute;
+    top: -4px;
+    right: -6px;
+    font-size: 12px;
+    border: 1px solid rgb(148, 144, 144);
+    color: white;
+    background-color: red;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6px;
+}
+
+.topbarRightImg{
+    width: 32px;
+    height: 32px;
+    margin: 0 20px;
+    border-radius: 50%;
+    object-fit: cover;
+}

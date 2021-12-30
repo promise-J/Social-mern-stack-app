@@ -1,0 +1,41 @@
+{
+  "name": "socialchattttyy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "engines": {
+    "node": "14.x",
+    "npm": "8.1.2"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.12.3",
+    "axios": "^0.21.2",
+    "bcrypt": "^5.0.1",
+    "cloudinary": "^1.26.3",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.2.1",
+    "helmet": "^4.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.13.7",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.3",
+    "path": "^0.12.7",
+    "react-router-dom": "^5.3.0"
+  },
+  "devDependencies": {
+    "concurrently": "^6.4.0",
+    "nodemon": "^2.0.12"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js",
+    "start": "nodemon server.js",
+    "dual": "npm run dev & (cd ../ && npm run start)"
+    },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

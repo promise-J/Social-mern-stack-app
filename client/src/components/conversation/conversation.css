@@ -1,0 +1,39 @@
+.chatMenuFriend{
+    height: 50px;
+    margin-top: 15px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    padding-right: 20px;
+    border: 1px solid rgb(214, 211, 211);
+}
+
+.chatMenuFriend:hover{
+    background: rgb(245, 237, 237);
+}
+
+.chatMenuFriendImg{
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 14px;
+}
+
+.chatMenuFriendName{
+    margin-left: 16px;
+}
+
+.chatMenuDeleteIcon{
+    color: red;
+    margin-left: auto;
+    display: none;
+    transition: 0.4s all ease-in-out;
+    cursor: pointer;
+}
+
+.chatMenuFriend:hover .chatMenuDeleteIcon{
+    display: block;
+}
+
+

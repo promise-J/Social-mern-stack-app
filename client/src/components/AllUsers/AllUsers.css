@@ -1,0 +1,89 @@
+.allUsers{
+    height: calc(100vh - 70px);
+    display: flex;
+    overflow-y: hidden;
+}
+
+.allUsers-wrapper{
+    /* font-family: 'Noto Serif Display', serif; */
+    flex: 6;
+    overflow-y: scroll;
+}
+
+.allUsers-wrapper h1{
+    text-align: center;
+    margin: 20px 0;
+    font-size: 30px;
+    color: green;
+}
+.allUsers-content{
+    /* background-color: green; */
+    display: flex;
+    height: 150px;
+    width: 80%;
+    margin: 15px auto;
+    box-shadow: 2px 2px 4px rgb(185, 184, 184), -2px -2px 1px rgb(187, 183, 183),
+    inset 2px 2px 4px rgb(177, 174, 174);
+    /* border: black solid 1px; */
+}
+.allUsers-content .image{
+    height: 140px;
+    width: 140px;
+    margin-top: 5px;
+    margin-left: 3px;
+    border-radius: 50%;
+    /* background-color: red; */
+    padding: 5px;
+    margin-left: 15px;
+}
+.allUsers-content .image img{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    /* object-fit: contain; */
+}
+.allUsers-content .details{
+    /* background-color: red; */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+.allUsers-content .details h4{
+    flex: 1;
+    text-transform: uppercase;
+    font-family: 'Noto Serif Display', serif;
+}
+.allUsers-content .details button{
+    /* margin-top: 5px; */
+    margin: 5px auto;
+    font-weight: lighter;
+    font-size: 10px;
+    letter-spacing: 1px;
+    width: 70%;
+    padding: 5px;
+    background-color: green;
+    border-radius: 5px;
+    color: white;
+    outline: none;
+    border: none;
+    outline-width: 0;
+    /* align-self: end; */
+}
+
+.allUsers-content .details h4{
+    /* font-size: 22px; */
+    text-align: center;
+    margin: 15px 0;
+}
+
+
+
+
+
+
+
+
+
+

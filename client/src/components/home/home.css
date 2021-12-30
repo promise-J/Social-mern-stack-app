@@ -1,0 +1,38 @@
+.home{
+    height: calc(100vh - 70px);
+    display: flex;
+    overflow-y: hidden;
+}
+
+.landing{
+    padding: 15px;
+    height: 100vh;
+    display: flex;
+}
+
+.landing .landing-img-container{
+    flex: 0.5;
+}
+
+.landing .landing-img-container img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.landing .landing-content{
+    flex: 0.5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.landing .landing-wrapper{
+    height: 200px;
+    text-align: center;
+}
+.landing .landing-content h1{
+    font-size: 40px;
+    font-family: cursive sans-serif;
+    margin-bottom: 20px;
+}
+

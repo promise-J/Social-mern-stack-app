@@ -1,0 +1,23 @@
+{
+  "name": "socialchat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/promise-J/SOCIAL-MERN-STACK-APP.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/promise-J/SOCIAL-MERN-STACK-APP/issues"
+  },
+  "homepage": "https://github.com/promise-J/SOCIAL-MERN-STACK-APP#readme",
+  "dependencies": {
+    "concurrently": "^6.5.1"
+  }
+}

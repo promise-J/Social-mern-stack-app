@@ -1,0 +1,47 @@
+.notification{
+    height: calc(100vh - 70px);
+    display: flex;
+    overflow-y: hidden;
+}
+
+.notification-wrapper{
+    font-family: 'Noto Serif Display', serif;
+    flex: 6;
+    overflow-y: scroll;
+}
+
+.notification-wrapper h1{
+    text-align: center;
+    margin: 20px 0;
+    font-size: 30px;
+    color: green;
+}
+
+.notification-content{
+    background-color: rgb(231, 230, 230);
+    width: 90%;
+    min-height: 40px;
+    margin: 15px auto;
+    padding: 12px 20px;
+    border-radius: 10px;
+}
+
+.notification-content p span{
+    font-size: 17px;
+    font-weight: bold;
+    margin-right: 5px;
+}
+.notification-content:hover{
+    background-color: rgb(223, 219, 219);
+}
+
+.deletePanel{
+    /* background-color: rgb(202, 198, 198); */
+    height: 50px;
+    width: 20%;
+    margin: 5px auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: cursive;
+}
