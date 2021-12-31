@@ -2,16 +2,17 @@ import './main.css'
 import Share from '../share/Share'
 import Posts from '../posts/Posts'
 import { useSelector } from 'react-redux'
-import {CircularProgress} from '@material-ui/core'
+// import {CircularProgress} from '@material-ui/core'
 import { useEffect, useRef, useState } from 'react'
 import axios from 'axios'
 import { MoreVertOutlined } from '@material-ui/icons'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import { format } from 'timeago.js'
 
 
 function Main({username, SinglePostId}) {
     // const {posts} = useSelector(state=> state.posts)
+    const history = useHistory()
     const auth = useSelector(state=> state.auth)
     // const {posts: allPosts} = useSelector(state=> state.posts)
     const [posts, setPosts] = useState([])
@@ -22,12 +23,14 @@ function Main({username, SinglePostId}) {
     const [editDesc, setEditDesc] = useState('')
     const [commentText, setCommentText] = useState('')
     const [comments, setComments] = useState([])
+    const [loading, setLoading] = useState(false)
     const [reComment, setReComment] = useState(false)
     const scrollRef = useRef();
 
     useEffect(() => {
       scrollRef.current?.scrollIntoView({ behavior: "smooth" });
     }, [comments]);
+
     
     useEffect(()=>{
       const getPost = async()=>{
@@ -40,16 +43,20 @@ function Main({username, SinglePostId}) {
 
     useEffect(() => {
         const fetchPosts = async () => {
+          setLoading(true)
           const res = username
             ? await axios.get("/posts/profile/" + username)
             : await axios.get("posts/timeline/" + user?._id);
+            console.log(res, username)
           setPosts(
-            res.data.sort((p1, p2) => {
+            res.data && res.data?.sort((p1, p2) => {
               return new Date(p2.createdAt) - new Date(p1.createdAt);
             })
           );
         };
+        setLoading(false)
         fetchPosts();
+
       }, [username, user._id, cb]);
 
       useEffect(()=>{
@@ -72,8 +79,10 @@ function Main({username, SinglePostId}) {
 
      const handleEdit = async()=>{
        try {
-         const res = await axios.put(`/posts/update/${post._id}`, {userId: user._id, content: editDesc})
-         console.log(res)
+         await axios.put(`/posts/update/${post._id}`, {userId: user._id, content: editDesc})
+         history.push('/home')
+        //  console.log(res)
+
        } catch (error) {
          console.log(error)
        }
@@ -107,7 +116,7 @@ function Main({username, SinglePostId}) {
             <MoreVertOutlined />
         </div>
         <div className="mainPostBody">
-            <p className="mainPostDescription"><input name='desc' value={editDesc} onChange={(e)=> setEditDesc(e.target.value)} style={{width: '100%', height: '30px', outline: 'none', border: '1px solid gray'}} placeholder='Text here' /></p>
+            <p className="mainPostDescription"><input name='desc' style={{padding: 10}} value={editDesc} onChange={(e)=> setEditDesc(e.target.value)} style={{width: '100%', height: '30px', outline: 'none', border: '1px solid gray'}} placeholder='Text here' /></p>
             {
                post.image && <img src={post.image?.url} alt="i" style={{width: SinglePostId && '100%', height: SinglePostId && '150px', objectFit: 'cover'}} className="mainPostTitleImg" />
             }
@@ -147,9 +156,9 @@ function Main({username, SinglePostId}) {
             {
                 !username &&   <Share cb={cb} setCb={setCb} />
             }
-            {   posts?.length ===0 ? <h2><CircularProgress /> </h2> : 
+            {   posts?.length ===0 ? <h2 style={{fontSize: 67, color: 'gray'}}>No Post yet </h2> : 
                 posts?.map(p=>(
-                    <Posts user={user} post={p} key={p._id} />
+                    <Posts user={user} setCb={setCb} cb={cb} post={p} key={p._id} />
                 ))
             }
             </div>

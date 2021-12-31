@@ -2,10 +2,10 @@ import { FavoriteOutlined, MoreVertOutlined, ThumbUp } from '@material-ui/icons'
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 // import {useSelector} from 'react-redux'
-import { Link, Redirect } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import {format} from 'timeago.js'
 
-function Posts({post}) {
+function Posts({post, cb, setCb}) {
     const [likes, setLikes] = useState(post.like.length)
     // const {user} = useSelector(state=> state.auth)
     // const {token} = useSelector(state=> state.token)
@@ -24,6 +24,21 @@ function Posts({post}) {
        }
        getPoster()
     },[post.userId])
+
+    const handleDelete = async(post)=>{
+        try {
+            if(post.public_id){
+                const res = await axios.post('/api/destroy', {public_id: post.image.public_id})
+                console.log(res.data)
+            }
+            const res = await axios.delete(`/posts/${post._id}?userId=${poster._id}`)
+            console.log(res.data)
+            setCb(!cb)
+        } catch (error) {
+            console.log(error, poster._id)
+        }
+    }
+
 
 
     const likeHandler = async()=>{
@@ -46,7 +61,7 @@ function Posts({post}) {
         <div className="mainPostTop">
             <div style={{opacity: toggleOption ? '1' : '0'}} className="extra-dot">
                 <Link style={{color: 'inherit', textDecoration: 'none', width: '100%'}} to={`/post/${post._id}`}><p>Edit</p></Link>
-                <p>Delete</p>
+                <p onClick={()=> handleDelete(post)}>Delete</p>
             </div>
             <div className="mainPostDetails">
                 <Link to={`/profile/${poster?.username}`}>

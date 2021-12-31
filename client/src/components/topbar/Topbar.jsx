@@ -78,7 +78,7 @@ function Topbar({cb}) {
                     <div className="topbarRightIcons">
                         <div className="topbarRightIcon">
                             <Person />
-                            <span className="topbarRightLabel"></span> 
+                            {0>1 && <span className="topbarRightLabel"></span> }
                         </div>
                         <Link style={{textDecoration: 'none', color: 'inherit'}} to='/messenger'>
                             <div className="topbarRightIcon">

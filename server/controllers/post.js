@@ -35,10 +35,12 @@ const postCtrl = {
         try {
             const post = await Post.findById(req.params.id)
             if(!post) return res.status(400).json({msg: 'Post not found'})
-            if(post.userId===req.body.userId){
+            if(post.userId===req.query.userId){
                 await post.deleteOne()
+                console.log('the same bro', req.query.userId)
                 res.status(200).json({msg: 'Post deleted'})
             }else{
+                console.log('not the same bro', req.query.userId)
                 return res.status(400).json({msg: 'You can only delete your post'})
             }
         } catch (error) {
