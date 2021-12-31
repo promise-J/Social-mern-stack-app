@@ -6,9 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "heroku-postbuild": "cd client && npm install && npm run build",
-    "start:socket": "cd socket && npm start",
-    "start:web": "cd server && npm start",
-    "start": "concurrently \"npm run start:socket\" \"npm run start:web\""
+    "start:web": "cd server && npm run start",
+    "start": "npm run start:web"
   },
   "repository": {
     "type": "git",
