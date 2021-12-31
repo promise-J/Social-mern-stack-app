@@ -24,7 +24,8 @@ export default function Messenger() {
   const [loadingCon, setLoadingCon] = useState(false)
 
   useEffect(() => {
-    socket.current = io("ws://localhost:8080");
+    socket.current = io();
+    // socket.current = io("ws://localhost:5000");
     socket.current.on("getMessage", (data) => {
       setArrivalMessage({
         sender: data.senderId,
