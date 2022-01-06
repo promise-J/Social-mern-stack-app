@@ -25,7 +25,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "postbuild": "mv ./build ../server/build"
+    "postbuild": "mv ./build ../server"
   },
   "eslintConfig": {
     "extends": [
