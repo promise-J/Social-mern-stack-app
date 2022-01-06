@@ -25,7 +25,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "postbuild": "mv ./build ./server"
+    "postbuild": "mv ./build ../server/build"
   },
   "eslintConfig": {
     "extends": [
@@ -45,7 +45,7 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:5000",
+  "proxy": "https://localhost:5000",
   "engines": {
     "node": "14.16.1"
   }
