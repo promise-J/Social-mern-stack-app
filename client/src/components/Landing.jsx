@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 
 
 const Landing = () => {
-    const LandingImg = 'http://localhost:3000/images/landingPage.png'
+    const LandingImg = '/images/landingPage.png'
     return (
         <div className='landing'>
             <div className='landing-img-container'>

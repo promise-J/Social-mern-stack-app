@@ -29,7 +29,7 @@ function Notification() {
            <div className="notification-wrapper">
                <h1>Notifications</h1>
                {
-                   user?.user?.notifications.length === 0 ? <h1>You do not have any Notifications</h1> :
+                   user?.user?.notifications?.length === 0 ? <h1>You do not have any Notifications</h1> :
                 <>
                <div onClick={deleteNotification} className="deletePanel">
                <span>Clear All</span>

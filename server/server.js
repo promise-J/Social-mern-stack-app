@@ -21,16 +21,11 @@ const io = require('socket.io')(http, {
 
 app.use(express.json())
 app.use(cors())
-app.use(helmet());
+app.use(helmet({
+  contentSecurityPolicy: false,
+}));
 
-if (process.env.NODE_ENV === "production"){
-  app.enable("trust proxy");
 
-  app.use(express.static("./build"));
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname,  "./build/index.html"));
-  });
-}
 
 
 
@@ -50,6 +45,15 @@ app.use('/api', require('./routes/uploadRoute'))
 app.use('/api', require('./routes/messageRoute'))
 app.use('/api', require('./routes/comment'))
 app.use('/api', require('./routes/conversationRoute'))
+
+if (process.env.NODE_ENV === "production"){
+  app.enable("trust proxy");
+
+  app.use(express.static("./build"));
+  app.get("/*", (req, res) => {
+    res.sendFile(path.resolve(__dirname,  "./build/index.html"));
+  });
+}
 
 
 
