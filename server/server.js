@@ -46,7 +46,7 @@ app.use('/api', require('./routes/messageRoute'))
 app.use('/api', require('./routes/comment'))
 app.use('/api', require('./routes/conversationRoute'))
 
-if (true){
+if (process.env.NODE_ENV=='production'){
   app.enable("trust proxy");
 
   app.use(express.static(__dirname + "/build"));
