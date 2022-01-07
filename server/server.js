@@ -46,10 +46,10 @@ app.use('/api', require('./routes/messageRoute'))
 app.use('/api', require('./routes/comment'))
 app.use('/api', require('./routes/conversationRoute'))
 
-if (process.env.NODE_ENV === "production"){
+if (true){
   app.enable("trust proxy");
 
-  app.use(express.static("./build"));
+  app.use(express.static(__dirname + "/build"));
   app.get("/*", (req, res) => {
     res.sendFile(path.resolve(__dirname,  "./build/index.html"));
   });
