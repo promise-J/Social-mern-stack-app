@@ -110,5 +110,23 @@
     }
   }
 
+@media screen and (max-width: 700px) {
+    .chatOnline{
+      display: none;
+    }
+}
+
+@media screen and (max-width: 490px) {
+    .chatDetailsDisplay h3{
+      font-size: 13px;
+    }
+}
+
+
+
+
+
+
+
 
 

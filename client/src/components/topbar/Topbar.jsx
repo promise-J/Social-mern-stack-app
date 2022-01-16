@@ -56,25 +56,7 @@ function Topbar({cb}) {
                     </div>
                 </div>
                 <div className="topbar-right">
-                    <div className="topbarRightLinks">
-                        <div className="topbarRightLink">
-                            {
-                                logged ?  <Link to='#'
-                                style={{textDecoration: 'none', color: 'inherit'}}
-                                onClick={logout}
-                                >
-                               <h5>Logout</h5>
-                               </Link>  :  <Link to='/login'
-                           style={{textDecoration: 'none', color: 'inherit'}}>
-                          <h5>Login</h5>
-                          </Link>  
-                            }
-                         
-                        </div>
-                        <div className="topbarRightLink">
-                            <h5>Timeline</h5>
-                        </div>
-                    </div>
+                   
                     <div className="topbarRightIcons">
                         <div className="topbarRightIcon">
                             <Person />
@@ -102,6 +84,28 @@ function Topbar({cb}) {
                         </Link>
                         }
                     </div>
+                    <div className="topbarRightLinks">
+                 
+                      <div className="topbarRightLink timeline">
+                       <h5>Timeline</h5>
+                      </div>
+                      <div className="topbarRightLink">
+                            {
+                                logged ?  <Link to='#'
+                                className='link'
+                                style={{textDecoration: 'none', color: 'white'}}
+                                onClick={logout}
+                                >
+                               <h5>Logout</h5>
+                               </Link>  :  <Link to='/login'
+                           style={{textDecoration: 'none', color: 'white'}}>
+                          <h5>Login</h5>
+                          </Link>  
+                            }
+                         
+                        </div>
+                    </div>
+
                 </div>
                 {
                     logged ? <Link to={`/profile/${user.username}`}>

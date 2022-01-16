@@ -88,6 +88,23 @@
     text-transform: uppercase;
 }
 
+@media screen and (max-width: 500px) {
+    .loginLeft, .loginRight{
+        margin: 1px;
+        padding: 1px;
+        height: fit-content;
+    }
+}
+@media screen and (max-width: 900px) {
+    .login{
+        flex-direction: column;
+        padding: 1px;
+    }
+    .login .loginLeft img{
+        width: 90%;
+        height: 100%;
+    }
+}
 
 
 

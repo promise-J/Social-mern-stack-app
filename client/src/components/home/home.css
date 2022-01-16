@@ -36,3 +36,16 @@
     margin-bottom: 20px;
 }
 
+@media screen and (max-width: 900px) {
+    .landing{
+        /* display: none; */
+        flex-direction: column;
+    }
+    
+}
+
+@media screen and (max-width: 856px){
+    .rightbar{
+        display: none;
+    }
+}

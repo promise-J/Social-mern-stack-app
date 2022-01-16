@@ -101,11 +101,10 @@ function Main({username, SinglePostId}) {
 
 
       if(SinglePostId) return (
-        <div style={{ height: '100%'}} className="main">
+        <div style={{ height: '100%', width: '100vh'}} className="main">
           <div className="mainWrapper">
-          <div className="mainPost" style={{width: SinglePostId && '63%'}}>
-        <div className="mainPostTop">
-            
+          <div className="mainPost" style={{width: SinglePostId && '100%'}}>
+        <div className="mainPostTop">       
             <div className="mainPostDetails">
                 <Link to={`/profile/${poster?.username}`}>
                <img src={poster?.profilePic?.url} alt="i" className="mainPostImg" />
@@ -116,9 +115,9 @@ function Main({username, SinglePostId}) {
             <MoreVertOutlined />
         </div>
         <div className="mainPostBody">
-            <p className="mainPostDescription"><input name='desc' style={{padding: 10}} value={editDesc} onChange={(e)=> setEditDesc(e.target.value)} style={{width: '100%', height: '30px', outline: 'none', border: '1px solid gray'}} placeholder='Text here' /></p>
+            <p className="mainPostDescription"><input name='desc' value={editDesc} onChange={(e)=> setEditDesc(e.target.value)} style={{padding: 10, width: '100%', height: '30px', outline: 'none', border: '1px solid gray'}} placeholder='Text here' /></p>
             {
-               post.image && <img src={post.image?.url} alt="i" style={{width: SinglePostId && '100%', height: SinglePostId && '150px', objectFit: 'cover'}} className="mainPostTitleImg" />
+               post.image && <img src={post.image?.url} alt="i" style={{width: '100%', height: SinglePostId && '520px', objectFit: 'cover'}} className="mainPostTitleImg" />
             }
         </div>
         <div className="mainPostBottom">

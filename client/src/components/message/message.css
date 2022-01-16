@@ -37,3 +37,18 @@
       background-color: rgb(245, 241, 241);
       color: black;
   }
+
+
+@media screen and (max-width: 490px) {
+    .message{
+        margin-top: 8px;
+    }
+    .messageBottom{
+        font-size: 9px;
+    }
+    .messageText{
+        font-size: 11px;
+        padding: 7px;
+        /* color: red; */
+    }
+}

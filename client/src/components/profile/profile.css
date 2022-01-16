@@ -55,7 +55,13 @@
 
 
 
-
+@media screen and (max-width: 490px) {
+    .profileImgCover{
+        height: 100px;
+        width: 100px;
+        right: 38%;
+    }
+}
 
 
 

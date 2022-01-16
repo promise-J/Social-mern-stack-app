@@ -4,6 +4,7 @@ import Main from '../main/Main'
 import Rightbar from '../rightbar/Rightbar'
 import Sidebar from '../sidebar/Sidebar'
 import Topbar from '../topbar/Topbar'
+import './singlepost.css'
 
 const SinglePost = () => {
     const location = useLocation()
@@ -12,10 +13,8 @@ const SinglePost = () => {
     return (
         <>
         <Topbar />
-        <div style={{padding: '20px 15rem', overflow: 'hidden'}} className='home'>
-           {/* <Sidebar /> */}
-           <Main style={{flex: '1'}} SinglePostId={id} />
-           {/* <Rightbar /> */}
+        <div style={{overflow: 'hidden'}} className='single'>
+           <Main style={{width: '100vw', padding: '10px', background: 'black'}} SinglePostId={id} edit />
         </div>
         </>
     )

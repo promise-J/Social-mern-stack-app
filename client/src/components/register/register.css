@@ -88,8 +88,24 @@
     margin: 12px 0 3px 0;
 }
 
+@media screen and (max-width: 500px) {
+    .registerLeft, .registerRight{
+        margin: 1px;
+        padding: 1px;
+        height: fit-content;
+    }
+}
 
-
+@media screen and (max-width: 900px){
+    .register{
+        padding: 2px;
+        flex-direction: column;
+    }
+    .registerLeft, .registerRight{
+        height: 100%;
+        width: 90%;
+    }
+}
 
 
 

@@ -73,7 +73,7 @@ function Share({cb, setCb}) {
                                    <div className="mainShareBottomIcon">
                                           <label htmlFor="file" style={{ display: 'flex', justifyContent: 'center', alignContent: 'center' }} >
                                                  <VideoLibrary htmlColor='crimson' htmlFor='file' style={{ cursor: 'pointer' }} />
-                                                 <span style={{ cursor: 'pointer' }} className="mainShareBottomText">Photo or Video</span>
+                                                 <span style={{ cursor: 'pointer' }} className="mainShareBottomText">Photos</span>
                                           </label>
                                           <input onChange={handleImage}
                                                  accept='.png, .jpeg, .jpg'

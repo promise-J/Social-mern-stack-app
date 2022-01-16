@@ -3,6 +3,7 @@
     overflow-y: scroll;
 }
 
+
 ::-webkit-scrollbar{
     width: 10px;
 }
@@ -17,6 +18,14 @@
     padding: 3px;
 }
 
+/* .main.edit{
+    background: yellow;
+    width: 100vw;
+} */
+.home.single{
+    /* background: black; */
+    flex: 1;
+}
 .mainWrapper{
     /* background: yellow; */
     padding: 20px 5px;
@@ -265,8 +274,8 @@
 }
 
 .main .comments{
-    height: 150px;
-    width: 65%;
+    min-height: 150px;
+    width: 90%;
     margin: auto;
 }
 .main .comments .comments-input-div input{
@@ -311,6 +320,19 @@
 
 
 
-
+@media screen and (max-width: 390px) {
+    .mainShareBottomIcon{
+        padding: 5px;
+    }
+    .mainShareBottom{
+        flex-direction: column;
+    }
+    .mainShareBottomIcon{
+        font-size: 13px;
+    }
+    .mainShareButton{
+        width: 100%;
+    }
+}
 
 
